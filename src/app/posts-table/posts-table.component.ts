@@ -20,7 +20,10 @@ export class PostsTableComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.sub = this.data.getAllPosts().subscribe(data => this.blogPosts = data);
+    this.sub = this.data.getAllPosts().subscribe(data => {
+      this.blogPosts = data;
+    });
+
   }
 
   ngOnDestroy(){

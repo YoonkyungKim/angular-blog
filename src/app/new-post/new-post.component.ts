@@ -10,7 +10,7 @@ import { BlogPost } from '../BlogPost';
 })
 export class NewPostComponent implements OnInit {
   blogPost: BlogPost = new BlogPost();
-  tags: string;
+  tags: string = "";
   private addSub: any;
 
   constructor(private data: PostService, private router: Router) { }
@@ -26,8 +26,7 @@ export class NewPostComponent implements OnInit {
     this.blogPost.postedBy = "WEB422 Student";
     this.blogPost.views = 0;
     this.addSub = this.data.newPost(this.blogPost).subscribe(()=>{
-      this.router.navigate(['/admin']); //no slash?
-    }); //when this method has completed..?
+      this.router.navigate(['/admin']);
+    });
   }
-
 }

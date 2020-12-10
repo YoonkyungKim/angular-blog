@@ -1,4 +1,4 @@
-<div *ngIf="blogPost && tags">
+<div *ngIf="blogPost">
     <br />
     <div class="container">
         <div class="row">
@@ -33,6 +33,6 @@
     <br />
 </div>
 
-<div *ngIf="!blogPost || !tags">
+<div *ngIf="!blogPost">
     <p>Loading...</p>
 </div>

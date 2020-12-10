@@ -18,7 +18,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
   private deleteSub: any;
 
   constructor(private data: PostService, private router: Router, private route: ActivatedRoute) { }
-  // let id = this.route.snapshot.params['id'];
+
   ngOnInit(): void {  
       this.sub = this.route.params.subscribe(params=>{
         this.dataSub = this.data.getPostbyId(params['id']).subscribe(data => {
@@ -36,14 +36,14 @@ export class EditPostComponent implements OnInit, OnDestroy {
     //set the value of blogPost.tags to the value of the tags property
     this.blogPost.tags = this.tags.split(",").map(tag=>tag.trim());
     this.updateSub = this.data.updatePostById(this.blogPost._id, this.blogPost).subscribe(()=>{
-      this.router.navigate(['/admin']); //no slash?
-    }); //when this method has completed..?
+    this.router.navigate(['/admin']); 
+    });
   }
 
   deletePost(){
     this.deleteSub = this.data.deletePostById(this.blogPost._id).subscribe(()=>{
-      this.router.navigate(['/admin']); //no slash?
-    }); //when this method has completed..?
+      this.router.navigate(['/admin']);
+    }); 
 
   }
 
