@@ -14,11 +14,13 @@ export class PagingComponent implements OnInit {
   firstPageItemClicked(){
     if (this.page > 1){
       this.newPage.emit(this.page -1);
+      window.scrollTo(0,0);
     }
   }
 
   lastPageItemClicked(){
     this.newPage.emit(this.page +1);
+    window.scrollTo(0,0);
   }
 
   ngOnInit(): void {

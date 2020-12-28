@@ -35,7 +35,7 @@ export class BlogComponent implements OnInit, OnDestroy {
       
       this.getPage(+params['page'] || 1);
     });
-    
+   
   }
 
   //Get all of the blog posts using the values of num, this.tag and this.category.
