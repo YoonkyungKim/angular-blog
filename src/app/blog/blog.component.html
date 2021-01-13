@@ -1,4 +1,5 @@
-<div class="container">
+<div *ngIf="blogPosts">
+  <div class="container">
     <div class="row">
       <!-- Latest Posts -->
       <main class="posts-listing col-lg-8"> 
@@ -24,4 +25,8 @@
       </aside>
     </div>
   </div>
-  
+</div>
+
+<div *ngIf="!blogPosts">
+  <p>Loading...</p>
+</div>

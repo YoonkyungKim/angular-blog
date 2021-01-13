@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'web422-a6';
+  title = 'angular-blog';
 }
 
